@@ -16,7 +16,7 @@ var campeonesSchema=Schema({
   habilidad_e:String,
   e_desc:String,
   habilidad_r:String,
-  e_desc:String,
+  r_desc:String
 });
 
 module.exports=mongoose.model('Campeones',campeonesSchema);

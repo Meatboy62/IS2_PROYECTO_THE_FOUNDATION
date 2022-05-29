@@ -3,7 +3,7 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var Campeon = require('../modelos/campeones');
 
-
+/*METODO GET GENERAL*/
 /*get all campeones*/
 router.get('/', function (req, res, next) {
   Campeon.find({}, (err, datos) => {
@@ -15,6 +15,7 @@ router.get('/', function (req, res, next) {
   });
 });
 
+/*METODO GET PARTICULAR*/
 /*get 1 campeon*/
 router.get('/:idCampeon', function (req, res, next) {
   Campeon.findOne({ 'id': req.params.idCampeon }, (err, datos) => {
@@ -26,6 +27,7 @@ router.get('/:idCampeon', function (req, res, next) {
   });
 });
 
+/*METODO DELETE*/
 /*delete 1 campeon*/
 router.delete('/:idCampeon', (req, res, next) => {
   Campeon.deleteOne({ 'id': req.params.idCampeon }, (err) => {
@@ -37,6 +39,7 @@ router.delete('/:idCampeon', (req, res, next) => {
   });
 });
 
+/*METODO POST*/
 /*post 1 campeon*/
 router.post('/', (req, res, next) => {
   var champ = Campeon({
@@ -65,6 +68,7 @@ router.post('/', (req, res, next) => {
   });
 });
 
+/*METODO PATCH*/
 /*update 1 or all atributes of campeon*/
 router.patch('/:idCampeon', (req, res, next) => {
   Campeon.updateOne({ 'id': req.params.idCampeon }, { $set: req.body }, (err, data) => {
@@ -76,15 +80,34 @@ router.patch('/:idCampeon', (req, res, next) => {
   });
 });
 
-/*FALTA CORREGIR ESTE MÉTODO */
+/*METODO PUT*/
 /*update all atributes of campeon*/
-router.put('/:idCampeon', (req, res, next) => {
-  Campeon.updateMany({ 'id': req.params.idCampeon,$set:req.body}, { $set:req.body}, (err, data) => {
-    if (err) {
-      res.json({ 'error': "Error al insertar" });
-    } else {
-      res.status(200).json(data);
-    }
-  });
+router.put('/:idCampeon', function (req, res) {
+  if (!req.body.id ||
+    !req.body.nombre_campeon ||
+    !req.body.campeon_desc ||
+    !req.body.imagen ||
+    !req.body.rol ||
+    !req.body.pasiva ||
+    !req.body.pasiva_desc ||
+    !req.body.habilidad_q ||
+    !req.body.q_desc ||
+    !req.body.habilidad_w ||
+    !req.body.w_desc ||
+    !req.body.habilidad_e ||
+    !req.body.e_desc ||
+    !req.body.habilidad_r ||
+    !req.body.r_desc) {
+    res.json({ 'error': "Error al insertar" });
+  } else {
+    Campeon.updateOne({ 'id': req.params.idCampeon }, { $set: req.body }, (err, data) => {
+      if (err) {
+        res.json({ 'error': "Error al insertar" });
+      } else {
+        res.status(200).json(data);
+      }
+    });
+  }
 });
+
 module.exports = router;

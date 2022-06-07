@@ -5,6 +5,7 @@ var Campeon = require('../modelos/campeones');
 
 /*METODO GET GENERAL*/
 /*get all campeones*/
+/*Este metodo permite mostrar todos los campeones almacenados */
 router.get('/', function (req, res, next) {
   Campeon.find({}, (err, datos) => {
     if (err) {
@@ -17,6 +18,7 @@ router.get('/', function (req, res, next) {
 
 /*METODO GET PARTICULAR*/
 /*get 1 campeon*/
+/*Este metodo permite mostrar un solo campeon*/
 router.get('/:idCampeon', function (req, res, next) {
   Campeon.findOne({ 'id': req.params.idCampeon }, (err, datos) => {
     if (err) {
@@ -29,6 +31,8 @@ router.get('/:idCampeon', function (req, res, next) {
 
 /*METODO DELETE*/
 /*delete 1 campeon*/
+/*Este metodo permite eliminar un campeon */
+
 router.delete('/:idCampeon', (req, res, next) => {
   Campeon.deleteOne({ 'id': req.params.idCampeon }, (err) => {
     if (err) {
@@ -41,6 +45,7 @@ router.delete('/:idCampeon', (req, res, next) => {
 
 /*METODO POST*/
 /*post 1 campeon*/
+/*Este metodo permite registrar un nuevo campeon */
 router.post('/', (req, res, next) => {
   var champ = Campeon({
     id: req.body.id,
@@ -70,6 +75,7 @@ router.post('/', (req, res, next) => {
 
 /*METODO PATCH*/
 /*update 1 or all atributes of campeon*/
+/*Este metodo permite actualizar un campeon con ciertos parametros*/
 router.patch('/:idCampeon', (req, res, next) => {
   Campeon.updateOne({ 'id': req.params.idCampeon }, { $set: req.body }, (err, data) => {
     if (err) {
@@ -82,6 +88,7 @@ router.patch('/:idCampeon', (req, res, next) => {
 
 /*METODO PUT*/
 /*update all atributes of campeon*/
+/*Este metodo permite actualizar todos los atributos de un campeon*/
 router.put('/:idCampeon', function (req, res) {
   if (!req.body.id ||
     !req.body.nombre_campeon ||

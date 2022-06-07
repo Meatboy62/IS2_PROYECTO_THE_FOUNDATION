@@ -1,14 +1,15 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
-var mongoose = require('mongoose');
-var Campeon = require('../modelos/campeones');
+var mongoose = require("mongoose");
+var Campeon = require("../modelos/campeones");
 
 /*METODO GET GENERAL*/
 /*get all campeones*/
-router.get('/', function (req, res, next) {
+/* Este metodo permite mostrar todos los campeones*/
+router.get("/", function (req, res, next) {
   Campeon.find({}, (err, datos) => {
     if (err) {
-      res.json({ 'error': 'error al hacer la consulta' });
+      res.json({ error: "error al hacer la consulta" });
     } else {
       res.status(200).json(datos);
     }
@@ -17,10 +18,11 @@ router.get('/', function (req, res, next) {
 
 /*METODO GET PARTICULAR*/
 /*get 1 campeon*/
-router.get('/:idCampeon', function (req, res, next) {
-  Campeon.findOne({ 'id': req.params.idCampeon }, (err, datos) => {
+/* Este metodo permite mostrar un campeon*/
+router.get("/:idCampeon", function (req, res, next) {
+  Campeon.findOne({ id: req.params.idCampeon }, (err, datos) => {
     if (err) {
-      res.json({ 'error': 'error al hacer la consulta' });
+      res.json({ error: "error al hacer la consulta" });
     } else {
       res.status(200).json(datos);
     }
@@ -29,19 +31,21 @@ router.get('/:idCampeon', function (req, res, next) {
 
 /*METODO DELETE*/
 /*delete 1 campeon*/
-router.delete('/:idCampeon', (req, res, next) => {
-  Campeon.deleteOne({ 'id': req.params.idCampeon }, (err) => {
+/* Este metodo permite borrar un campeon*/
+router.delete("/:idCampeon", (req, res, next) => {
+  Campeon.deleteOne({ id: req.params.idCampeon }, (err) => {
     if (err) {
-      res.json({ 'error': 'error al hacer la consulta' });
+      res.json({ error: "error al hacer la consulta" });
     } else {
-      res.json({ 'mensaje': 'OK' });
+      res.json({ mensaje: "OK" });
     }
   });
 });
 
 /*METODO POST*/
 /*post 1 campeon*/
-router.post('/', (req, res, next) => {
+/* Este metodo permite guardar un nuevo camepon*/
+router.post("/", (req, res, next) => {
   var champ = Campeon({
     id: req.body.id,
     nombre_campeon: req.body.nombre_campeon,
@@ -57,11 +61,11 @@ router.post('/', (req, res, next) => {
     habilidad_e: req.body.habilidad_e,
     e_desc: req.body.e_desc,
     habilidad_r: req.body.habilidad_r,
-    r_desc: req.body.r_desc
+    r_desc: req.body.r_desc,
   });
   champ.save((err, data) => {
     if (err) {
-      res.json({ 'error': "Error al insertar" });
+      res.json({ error: "Error al insertar" });
     } else {
       res.status(200).json(data);
     }
@@ -70,20 +74,28 @@ router.post('/', (req, res, next) => {
 
 /*METODO PATCH*/
 /*update 1 or all atributes of campeon*/
-router.patch('/:idCampeon', (req, res, next) => {
-  Campeon.updateOne({ 'id': req.params.idCampeon }, { $set: req.body }, (err, data) => {
-    if (err) {
-      res.json({ 'error': "Error al insertar" });
-    } else {
-      res.status(200).json(data);
+/* Este metodo permite modificar un campeon*/
+
+router.patch("/:idCampeon", (req, res, next) => {
+  Campeon.updateOne(
+    { id: req.params.idCampeon },
+    { $set: req.body },
+    (err, data) => {
+      if (err) {
+        res.json({ error: "Error al insertar" });
+      } else {
+        res.status(200).json(data);
+      }
     }
-  });
+  );
 });
 
 /*METODO PUT*/
 /*update all atributes of campeon*/
-router.put('/:idCampeon', function (req, res) {
-  if (!req.body.id ||
+/* Este metodo permite actualizar un campeon por completo*/
+router.put("/:idCampeon", function (req, res) {
+  if (
+    !req.body.id ||
     !req.body.nombre_campeon ||
     !req.body.campeon_desc ||
     !req.body.imagen ||
@@ -97,16 +109,21 @@ router.put('/:idCampeon', function (req, res) {
     !req.body.habilidad_e ||
     !req.body.e_desc ||
     !req.body.habilidad_r ||
-    !req.body.r_desc) {
-    res.json({ 'error': "Error al insertar" });
+    !req.body.r_desc
+  ) {
+    res.json({ error: "Error al insertar" });
   } else {
-    Campeon.updateOne({ 'id': req.params.idCampeon }, { $set: req.body }, (err, data) => {
-      if (err) {
-        res.json({ 'error': "Error al insertar" });
-      } else {
-        res.status(200).json(data);
+    Campeon.updateOne(
+      { id: req.params.idCampeon },
+      { $set: req.body },
+      (err, data) => {
+        if (err) {
+          res.json({ error: "Error al insertar" });
+        } else {
+          res.status(200).json(data);
+        }
       }
-    });
+    );
   }
 });
 

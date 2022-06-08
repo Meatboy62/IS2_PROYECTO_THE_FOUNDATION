@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teoría Básica de IS</title>
+  <link rel="shortcut icon" href="img/icon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="css/estilo.css" />
+  <link rel="stylesheet" href="css/estilo-scrum.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Inicio</a>
+      <a href="apartado1.html">Introduccion a Docker</a>
+    </nav>
+    <section class="textos-header">
+      <h1>Ingenieria de sofware II</h1>
+      <h2>The foundation</h2>
+    </section>
+    <div class="wave" style="height: 150px; overflow: hidden">
+      <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%">
+        <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+          style="stroke: none; fill: #fff"></path>
+      </svg>
+    </div>
+  </header>
+  <main>
+    <section class="contenedor sobre-nosotros">
+      <h2 class="titulo">Nuestra pagina web</h2>
+      <div class="contenedor-sobre-nosotros">
+        <img src="img/fes.png" alt="" class="imagen-about-us" />
+        <div class="contenido-textos">
+          <h3><span>1</span> Pagina del curso IS2</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis,
+            excepturi quas, error repudiandae eveniet autem placeat eaque ipsa
+            temporibus quo saepe consectetur architecto, perspiciatis
+            similique nihil voluptate maxime itaque pariatur!
+          </p>
+          <h3><span>2</span> Nuestra pagina de inicio</h3>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis,
+            excepturi quas, error repudiandae eveniet autem placeat eaque ipsa
+            temporibus quo saepe consectetur architecto, perspiciatis
+            similique nihil voluptate maxime itaque pariatur!
+          </p>
+        </div>
+      </div>
+    </section>
+    <section class="portafolio">
+      <div class="contenedor">
+        <h2 class="titulo" id="Enlace">Contenido</h2>
+
+        <div class="boton-inicio">
+          <a href="index.html">
+            <button class="B-inicio"> Inicio </button>
+          </a>
+        </div>
+
+        <dev class="galeria-enlace" id="menu">
+          <div class="imagen-enlace">
+            <a href="apartado1-Punto1.html#menu">
+              <img src="img/img8.png" alt="" />
+              <div class="hover-galeria">
+                <img src="img/icono_SCRUM.png" alt="" />
+                <p>Introduccion</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="imagen-enlace">
+            <a href="apartado1-Punto2.html#menu">
+              <img src="img/img5.png" alt="" />
+              <div class="hover-galeria">
+                <img src="img/icono_SCRUM.png" alt="" />
+                <p>Directivas</p>
+              </div>
+            </a>
+          </div>
+          <div class="imagen-enlace">
+            <a href="apartado1-Punto3.html#menu">
+              <img src="img/img6.png" alt="" />
+              <div class="hover-galeria">
+                <img src="img/icono_SCRUM.png" alt="" />
+                <p>Ciclo de vida de los contenedores</p>
+              </div>
+            </a>
+          </div>
+        </dev>
+
+        <div class="contenido">
+          <h3 class="titulo"> Ciclo de vida</h3>
+          <p>
+            Cuando ejecutamos el comando docker container run -it ubuntu:16.04 se crea una instancia de la imagen que
+            hemos invocado (en este caso ubuntu:16:04) y se ejecuta en un nuevo contenedor, en este momento el
+            contenedor se encuentra en estado de arranque.
+
+            Cuando se arranca el contenedor este se encuentra en estado de ejecución, por lo que realiza las tareas que
+            requiere e incluso podemos interactuar con el.
+
+            Apenas abandonamos el contenedor nos dimos cuenta que este contenedor cerro su ejecución, pues ya no aparece
+            al listar los contenedores en ejecución, en este punto el contenedor de Docker se encuentra en estado
+            detenido.
+          </p>
+          <br>
+          <img src="img/im-docker-ciclo-vida-contenedor.jpg" alt="" />
+          <br>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+
+
+.fondo{
+    background-image:url(https://images.contentstack.io/v3/assets/blt731acb42bb3d1659/bltc28d43095579c8b5/5d87c24e8d8a3163705e3070/summonersrift.jpg);
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+
+.letraLOL{
+    font-style: italic;
+}

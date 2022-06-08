@@ -1,52 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="estilo.css">
+  <link rel="stylesheet" href="estilo.css">
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
 
-    <title>Campeón</title>
+
+  <title>Campeón</title>
 </head>
+
 <body class="fondo" style="background-color:#07121A;">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark font-weight-bold" style="background-color:#111111;">
-        <a class="navbar-brand" href="home.hbs">Campeones de League of legends</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="listaC.hbs">Campeones</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="agregarC.hbs">Agregar Campeón</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#"></a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark font-weight-bold" style="background-color:#111111;">
+    <a class="navbar-brand" href="home.hbs">Campeones de League of legends</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="listaC.hbs">Campeones</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="agregarC.hbs">Agregar Campeón</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-      <br>
+  <br>
 
-<div class="container rounded letraLOL">
-    
-<<<<<<< HEAD
-    <form class="" style=color:white;  action="http://localhost:3000/campeones/" method="post">
-=======
-    <form style="color:white;" method="post" action="/">
->>>>>>> 4f648f385493a780966aaf9e65e0bf99ae6e7a28
+  <div class="container rounded letraLOL">
+
+
+    <form class="" style=color:white; action="http://localhost:3000/campeones/" method="post">
+      <form style="color:white;" method="post" action="/">
         <div class="row">
           <div class="col">
             <label>Nombre del campeón</label>
@@ -64,36 +72,37 @@
           </div>
         </div>
         <div class="row">
-            <div class="col">
-                <label>Nombre de la Habilidad Q</label>
-                <textarea name="habilidad_q" class="form-control" rows="1" style="resize:none;"></textarea>
-                <label>Habilidad Q</label>
-                <textarea name="q_desc" class="form-control" rows="3" style="resize:none;"></textarea>
-                <label>Nombre de la Habilidad W</label>
-                <textarea name="habilidad_w" class="form-control" rows="1" style="resize:none;"></textarea>
-                <label>Habilidad W</label>
-                <textarea name="w_desc" class="form-control" rows="3" style="resize:none;"></textarea>
-            </div>
-            <div class="col">
-                <label>Nombre de la Habilidad E</label>
-                <textarea name="habilidad_e" class="form-control" rows="1" style="resize:none;"></textarea>
-                <label>Habilidad E</label>
-                <textarea name="e_desc" class="form-control" rows="3" style="resize:none;"></textarea>
-                <label>Nombre de la Habilidad R</label>
-                <textarea name="habilidad_r" class="form-control" rows="1" style="resize:none;"></textarea>
-                <label>Habilidad R</label>
-                <textarea name="r_desc" class="form-control" rows="3" style="resize:none;"></textarea>
-            </div>
+          <div class="col">
+            <label>Nombre de la Habilidad Q</label>
+            <textarea name="habilidad_q" class="form-control" rows="1" style="resize:none;"></textarea>
+            <label>Habilidad Q</label>
+            <textarea name="q_desc" class="form-control" rows="3" style="resize:none;"></textarea>
+            <label>Nombre de la Habilidad W</label>
+            <textarea name="habilidad_w" class="form-control" rows="1" style="resize:none;"></textarea>
+            <label>Habilidad W</label>
+            <textarea name="w_desc" class="form-control" rows="3" style="resize:none;"></textarea>
+          </div>
+          <div class="col">
+            <label>Nombre de la Habilidad E</label>
+            <textarea name="habilidad_e" class="form-control" rows="1" style="resize:none;"></textarea>
+            <label>Habilidad E</label>
+            <textarea name="e_desc" class="form-control" rows="3" style="resize:none;"></textarea>
+            <label>Nombre de la Habilidad R</label>
+            <textarea name="habilidad_r" class="form-control" rows="1" style="resize:none;"></textarea>
+            <label>Habilidad R</label>
+            <textarea name="r_desc" class="form-control" rows="3" style="resize:none;"></textarea>
+          </div>
         </div>
         <br>
         <div style="text-align: center;">
-            <button type="submit" class="btn btn-dark">Agregar Campeón</button>
+          <button type="submit" class="btn btn-dark">Agregar Campeón</button>
         </div>
-    </form>
+      </form>
 
-    <br>
+      <br>
 
-</div>  
+  </div>
 
 </body>
-</html>
+
+</html

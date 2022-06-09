@@ -5,16 +5,18 @@ var Campeon = require('../modelos/campeones');
 
 /*METODO GET GENERAL*/
 /*get all campeones*/
-/*Este metodo permite mostrar todos los campeones almacenados */
+/*Este metodo permite mostrar todos los campeones almacenados*/
 router.get('/', function (req, res, next) {
   Campeon.find({}, (err, datos) => {
     if (err) {
       res.json({ 'error': 'error al hacer la consulta' });
     } else {
-      res.status(200).json(datos);
+      //res.status(200).json(datos);
+      res.render('listaC',{'contenido':datos});
     }
   });
 });
+
 
 /*METODO GET PARTICULAR*/
 /*get 1 campeon*/
@@ -25,6 +27,7 @@ router.get('/:idCampeon', function (req, res, next) {
       res.json({ 'error': 'error al hacer la consulta' });
     } else {
       res.status(200).json(datos);
+    
     }
   });
 });

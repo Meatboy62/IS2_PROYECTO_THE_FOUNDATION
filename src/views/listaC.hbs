@@ -58,17 +58,26 @@
             </tr>
         </thead>
         <tbody>
+               {{#each result}}
                 <tr>
-                    <td>1</td>
-                    <td>"campeon"</td>
-                    <td>"rol"</td>
-                    <td><a href="" type="button" class="btn btn-light" style="color:black;">Ver</a></td>
+                    <td>{{this.id}}</td>
+                    <td>{{this.nombre_campeon}}</td>
+                    <td>{{this.rol}}</td>
+                    <td>
+                        <form action="campeon.hbs?sus={{_id}}" method="POST">
+                                <input type="hidden" name="_method" value="get">
+                                <button type="submit" class="btn btn-white" name="id" value="{{this._id}}">Ver</button>
+                        </form>
+                    </td>
                     <td><a href="" type="button" class="btn btn-light" style="color:black;">Editar</a></td>
-                    <td><a href="" type="button" class="btn btn-light" style="color:black;">Eliminar</a></td>
-                    <td><a href="" type="button" class="btn btn-light" style="color:black;">Rehacer</a></td>
+                    <td>
+                        <form action="/{{_id}}?_method=delete" method="POST">
+                                <input type="hidden" name="_method" value="delete">
+                                <button type="submit" class="btn btn-danger" name="id" value="{{this._id}}">Eliminar</button>
+                        </form>
+                    </td>
                 </tr>
-                
-            
+          {{/each}}
         </tbody>
     </table>
 

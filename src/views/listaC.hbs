@@ -1,52 +1,45 @@
-
 <body style="background-color:#07121A;">
-
-    
-
-      <br>
-
-<div class="container-fluid rounded fondo">
-
-  <br>
-    
-    <table class="table rounded letraLOL" style="background-color:#31333C; color:white; text-align:center;" >
-        <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Rol</th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-            </tr>
-        </thead>
-        <tbody>
-               {{#each contenido}}
+    <br>
+    <div class="container-fluid rounded fondo">
+        <br>
+        <table class="table rounded letraLOL" style="background-color:#31333C; color:white; text-align:center;">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Rol</th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each contenido}}
                 <tr>
                     <td>{{this.id}}</td>
                     <td>{{this.nombre_campeon}}</td>
                     <td>{{this.rol}}</td>
                     <td>
-                        <form action="campeon.hbs?sus={{_id}}" method="POST">
-                                <input type="hidden" name="_method" value="get">
-                                <button type="submit" class="btn btn-white" name="id" value="{{this._id}}">Ver</button>
+                        <form action="http://localhost:3000/campeones/{{this.id}}" method="GET">
+                            <input type="hidden" name="_method" value="get">
+                            <button  type="submit" class="btn btn-white" name="id" value="{{this._id}}">Ver</button>
                         </form>
                     </td>
-                    <td><a href="" type="button" class="btn btn-light" style="color:black;">Editar</a></td>
+                    <td><form action="http://localhost:3000/campeones/form/modificar/{{this.id}}" method="GET">
+                            <input type="hidden" name="_method" value="get">
+                            <button  type="submit" class="btn btn-white" name="id" value="{{this._id}}">Editar</button>
+                        </form></td>
                     <td>
-                        <form action="/{{_id}}?_method=delete" method="POST">
-                                <input type="hidden" name="_method" value="delete">
-                                <button type="submit" class="btn btn-danger" name="id" value="{{this._id}}">Eliminar</button>
+                        <form action="http://localhost:3000/campeones/{{this.id}}?_method=DELETE" method="post">
+                            <input type="hidden" name="_method" value="delete">
+                            <button type="submit" class="btn btn-danger" name="id" value="{{this.id}}">Eliminar</button>
                         </form>
                     </td>
                 </tr>
-          {{/each}}
-        </tbody>
-    </table>
-
-    <br>
-
-</div>  
-
+                {{/each}}
+            </tbody>
+        </table>
+        <br>
+    </div>
 </body>

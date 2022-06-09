@@ -1,0 +1,50 @@
+<br>
+  <div class="container rounded letraLOL">
+    <form class="" style=color:white; action="localhost:3000/campeones/form/modificar/{{contenido.id}}?_method=put" method="post">
+        <div class="row">
+          <div class="col">
+            <label>ID</label>
+            <input type="number" name="id" class="form-control" value="{{contenido.id}}" required>
+            <label>Nombre del campeón</label>
+            <input type="text" name="nombre_campeon" class="form-control" value="{{contenido.nombre_campeon}}" required>
+            <label>Descripción del campeón</label>
+            <textarea name="campeon_desc" class="form-control" rows="10" style="resize:none;"  required>{{contenido.campeon_desc}}</textarea>
+          </div>
+          <div class="col">
+            <label>Rol del campeón</label>
+            <input name="rol" type="text" class="form-control" value="{{contenido.rol}}" required>
+            <label>Imagen</label>
+            <input name="imagen" type="text" class="form-control" placeholder="dirección URL" value="{{contenido.imagen}}" required>
+            <label>Pasiva del campeón</label>
+            <textarea name="pasiva" class="form-control" rows="7" style="resize:none;" required>{{contenido.pasiva}}</textarea>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label>Nombre de la Habilidad Q</label>
+            <textarea name="habilidad_q" class="form-control" rows="1" style="resize:none;" required>{{contenido.habilidad_q}}</textarea>
+            <label>Habilidad Q</label>
+            <textarea name="q_desc" class="form-control" rows="3" style="resize:none;" required>{{contenido.q_desc}}</textarea>
+            <label>Nombre de la Habilidad W</label>
+            <textarea name="habilidad_w" class="form-control" rows="1" style="resize:none;" required>{{contenido.habilidad_w}}</textarea>
+            <label>Habilidad W</label>
+            <textarea name="w_desc" class="form-control" rows="3" style="resize:none;" required>{{contenido.w_desc}}</textarea>
+          </div>
+          <div class="col">
+            <label>Nombre de la Habilidad E</label>
+            <textarea name="habilidad_e" class="form-control" rows="1" style="resize:none;" required>{{contenido.habilidad_e}}</textarea>
+            <label>Habilidad E</label>
+            <textarea name="e_desc" class="form-control" rows="3" style="resize:none;" required>{{contenido.e_desc}}</textarea>
+            <label>Nombre de la Habilidad R</label>
+            <textarea name="habilidad_r" class="form-control" rows="1" style="resize:none;" required>{{contenido.habilidad_r}}</textarea>
+            <label>Habilidad R</label>
+            <textarea name="r_desc" class="form-control" rows="3" style="resize:none;" required>{{contenido.r_desc}}</textarea>
+          </div>
+        </div>
+        <br>
+        <div style="text-align: center;">
+          <button type="submit" class="btn btn-dark" onclick=Console.log("boton")>Editar Campeón</button>
+        </div>
+      </form>
+      <br>
+  </div>

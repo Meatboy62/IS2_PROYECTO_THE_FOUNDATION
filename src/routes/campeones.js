@@ -9,7 +9,7 @@ var Campeon = require('../modelos/campeones');
 router.get('/', function (req, res, next) {
   Campeon.find({}, (err, datos) => {
     if (err) {
-      res.json({ 'error': 'error al hacer la consulta' });
+      res.json({ 'error': 'error al hacer la consulta1' });
     } else {
       //res.status(200).json(datos);
       res.render('listaC',{'contenido':datos});
@@ -24,10 +24,10 @@ router.get('/', function (req, res, next) {
 router.get('/:idCampeon', function (req, res, next) {
   Campeon.findOne({ 'id': req.params.idCampeon }, (err, datos) => {
     if (err) {
-      res.json({ 'error': 'error al hacer la consulta' });
+      res.json({ 'error': 'error al hacer la consulta2' });
     } else {
-      res.status(200).json(datos);
-    
+      //res.status(200).json(datos);
+      res.render('campeon',{'contenido':datos});
     }
   });
 });
@@ -39,7 +39,7 @@ router.get('/:idCampeon', function (req, res, next) {
 router.delete('/:idCampeon', (req, res, next) => {
   Campeon.deleteOne({ 'id': req.params.idCampeon }, (err) => {
     if (err) {
-      res.json({ 'error': 'error al hacer la consulta' });
+      res.json({ 'error': 'error al hacer la consulta3' });
     } else {
       res.json({ 'mensaje': 'OK' });
     }
@@ -72,6 +72,7 @@ router.post('/', (req, res, next) => {
       res.json({ 'error': "Error al insertar" });
     } else {
       res.status(200).json(data);
+      
     }
   });
 });

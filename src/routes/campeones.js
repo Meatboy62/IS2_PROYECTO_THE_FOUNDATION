@@ -76,8 +76,8 @@ router.post('/', (req, res, next) => {
       if (err) {
         res.json({ 'error': "Error al insertar" });
       } else {
-        res.status(200).json(data);
-        
+        //res.status(200).json(data);
+        res.redirect("http://localhost:3000/campeones/");
       }
     });
   } else {
@@ -136,10 +136,11 @@ router.put('/:idCampeon', function (req, res) {
         res.json({ 'error': "Error al insertar" });
       } else {
         res.status(200).json(data);
-        //res.redirect("http://localhost:3000/campeones/");
+        res.redirect("http://localhost:3000/campeones/");
       }
     });
   }
 });
+
 
 module.exports = router;

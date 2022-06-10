@@ -9,10 +9,11 @@ var Campeon = require('../modelos/campeones');
 router.get('/', function (req, res, next) {
   Campeon.find({}, (err, datos) => {
     if (err) {
-      res.json({ 'error': 'error al hacer la consulta1' });
+      res.json({ 'error': 'error al hacer la consulta' });
     } else {
-      //res.status(200).json(datos);
+      
       res.render('listaC', { 'contenido': datos });
+      //res.status(200).json(datos);
     }
   });
 });
@@ -23,7 +24,7 @@ router.get('/', function (req, res, next) {
 router.get('/:idCampeon', function (req, res, next) {
   Campeon.findOne({ 'id': req.params.idCampeon }, (err, datos) => {
     if (err) {
-      res.json({ 'error': 'error al hacer la consulta2' });
+      res.json({ 'error': 'error al hacer la consulta' });
     } else {
       //res.status(200).json(datos);
       res.render('campeon', { 'contenido': datos });
@@ -37,7 +38,7 @@ router.get('/:idCampeon', function (req, res, next) {
 router.delete('/:idCampeon', (req, res, next) => {
   Campeon.deleteOne({ 'id': req.params.idCampeon }, (err) => {
     if (err) {
-      res.json({ 'error': 'error al hacer la consulta3' });
+      res.json({ 'error': 'error al hacer la consulta' });
     } else {
       //res.json({ 'mensaje': 'OK' });
       res.redirect("http://localhost:3000/campeones/");
@@ -75,7 +76,7 @@ router.post('/', (req, res, next) => {
       if (err) {
         res.json({ 'error': "Error al insertar" });
       } else {
-        //res.status(200).json(data);
+        res.status(200).json(data);
         
       }
     });
@@ -98,20 +99,21 @@ router.patch('/:idCampeon', (req, res, next) => {
 });
 
 
-router.get('/form/modificar/:idCampeon', function (req, res, next) {
+router.get('/modificar/:idCampeon', function (req, res, next) {
   Campeon.findOne({ 'id': req.params.idCampeon }, (err, datos) => {
     if (err) {
-      res.json({ 'error': 'error al hacer la consulta2' });
+      res.json({ 'error': 'error al hacer la consulta' });
     } else {
       //res.status(200).json(datos);
       res.render('editarC', { 'contenido': datos });
     }
   });
 });
+
 /*METODO PUT*/
 /*update all atributes of campeon*/
 /*Este metodo permite actualizar todos los atributos de un campeon*/
-router.put('/form/modificar/:idCampeon', function (req, res) {
+router.put('/:idCampeon', function (req, res) {
   if (!req.body.id ||
     !req.body.nombre_campeon ||
     !req.body.campeon_desc ||
@@ -129,12 +131,12 @@ router.put('/form/modificar/:idCampeon', function (req, res) {
     !req.body.r_desc) {
     res.json({ 'error': "Error al insertar" });
   } else {
-    Campeon.findByIdAndUpdate({ 'id': req.params.idCampeon }, { $set: req.body }, (err, data) => {
+    Campeon.updateOne({ 'id': req.params.idCampeon }, { $set: req.body }, (err, data) => {
       if (err) {
         res.json({ 'error': "Error al insertar" });
       } else {
-        //res.status(200).json(data);
-        res.redirect("http://localhost:3000/campeones/");
+        res.status(200).json(data);
+        //res.redirect("http://localhost:3000/campeones/");
       }
     });
   }

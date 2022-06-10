@@ -10,6 +10,7 @@ mongoose.connect('mongodb+srv://admin_lol:4yXZQhExL8QrdxHS@cluster0.re5xb.mongod
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var campeonesRouter = require('./routes/campeones');
+var dockerRouter = require('./routes/docker');
 
 var app = express();
 
@@ -27,6 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/campeones', campeonesRouter);
+app.use('/docker', dockerRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

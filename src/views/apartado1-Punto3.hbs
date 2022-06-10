@@ -17,8 +17,8 @@
 <body>
   <header>
     <nav>
-      <a href="index.html">Inicio</a>
-      <a href="apartado1.html">Introduccion a Docker</a>
+      <a href="http://localhost:3000/docker/">Inicio</a>
+      <a href="http://localhost:3000/docker/apartado1-1">Introduccion a Docker</a>
     </nav>
     <section class="textos-header">
       <h1>Ingenieria de sofware II</h1>
@@ -36,22 +36,6 @@
       <h2 class="titulo">Nuestra pagina web</h2>
       <div class="contenedor-sobre-nosotros">
         <img src="img/fes.png" alt="" class="imagen-about-us" />
-        <div class="contenido-textos">
-          <h3><span>1</span> Pagina del curso IS2</h3>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis,
-            excepturi quas, error repudiandae eveniet autem placeat eaque ipsa
-            temporibus quo saepe consectetur architecto, perspiciatis
-            similique nihil voluptate maxime itaque pariatur!
-          </p>
-          <h3><span>2</span> Nuestra pagina de inicio</h3>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis,
-            excepturi quas, error repudiandae eveniet autem placeat eaque ipsa
-            temporibus quo saepe consectetur architecto, perspiciatis
-            similique nihil voluptate maxime itaque pariatur!
-          </p>
-        </div>
       </div>
     </section>
     <section class="portafolio">
@@ -59,14 +43,14 @@
         <h2 class="titulo" id="Enlace">Contenido</h2>
 
         <div class="boton-inicio">
-          <a href="index.html">
+          <a href="http://localhost:3000/docker/">
             <button class="B-inicio"> Inicio </button>
           </a>
         </div>
 
         <dev class="galeria-enlace" id="menu">
           <div class="imagen-enlace">
-            <a href="apartado1-Punto1.html#menu">
+            <a href="http://localhost:3000/docker/apartado1-1">
               <img src="img/img8.png" alt="" />
               <div class="hover-galeria">
                 <img src="img/icono_SCRUM.png" alt="" />
@@ -76,7 +60,7 @@
           </div>
 
           <div class="imagen-enlace">
-            <a href="apartado1-Punto2.html#menu">
+            <a href="http://localhost:3000/docker/apartado1-2">
               <img src="img/img5.png" alt="" />
               <div class="hover-galeria">
                 <img src="img/icono_SCRUM.png" alt="" />
@@ -85,7 +69,7 @@
             </a>
           </div>
           <div class="imagen-enlace">
-            <a href="apartado1-Punto3.html#menu">
+            <a href="http://localhost:3000/docker/apartado1-3">
               <img src="img/img6.png" alt="" />
               <div class="hover-galeria">
                 <img src="img/icono_SCRUM.png" alt="" />
@@ -96,28 +80,23 @@
         </dev>
 
         <div class="contenido">
-          <h3 class="titulo"> Directivas Dockerfile</h3>
-          <p>Para entender mejor qué son los comandos de Docker y cómo funcionan, vamos a explicar brevemente la
-            estructura de Docker. La instalación de Docker en un host local contiene el Docker Engine como núcleo, que
-            consta de tres componentes principales:
+          <h3 class="titulo"> Ciclo de vida</h3>
+          <p>
+            Cuando ejecutamos el comando docker container run -it ubuntu:16.04 se crea una instancia de la imagen que
+            hemos invocado (en este caso ubuntu:16:04) y se ejecuta en un nuevo contenedor, en este momento el
+            contenedor se encuentra en estado de arranque.
 
-            El daemon de Docker, que se ejecuta como “dockerd” en el host.
-            La API de Docker, proporcionada por el daemon de Docker. Este se dirige y se deja controlar a través de la
-            API.
-            La interfaz de línea de comandos (“command line interface”, CLI), que se utiliza como un comando de Docker
-            para comunicarse con la API de Docker.
-            Para controlar Docker, el usuario introduce los comandos de Docker en la línea de comandos, que son
-            recibidos y procesados por la CLI de Docker. A partir de los comandos, se generan las correspondientes
-            llamadas a la API para el daemon de Docker, que es el que realiza el trabajo real.</p>
+            Cuando se arranca el contenedor este se encuentra en estado de ejecución, por lo que realiza las tareas que
+            requiere e incluso podemos interactuar con el.
+
+            Apenas abandonamos el contenedor nos dimos cuenta que este contenedor cerro su ejecución, pues ya no aparece
+            al listar los contenedores en ejecución, en este punto el contenedor de Docker se encuentra en estado
+            detenido.
+          </p>
+          <br>
+          <img src="img/im-docker-ciclo-vida-contenedor.jpg" alt="" />
           <br>
         </div>
-        <br>
-        <img src="img/Captura.PNG" alt="" />
-        <br>
-        <img src="img/Captura2.PNG" alt="" />
-        <br>
-        <img src="img/Captura3.PNG" alt="" />
-        <br>
       </div>
     </section>
   </main>
